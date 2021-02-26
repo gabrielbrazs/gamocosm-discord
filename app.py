@@ -13,7 +13,6 @@ logging.basicConfig(handlers=[logging.FileHandler('app.log'), logging.StreamHand
 logging.info("------ APP STARTED ------")
 
 os.environ["CONFIGDIR"] = "./"
-config = confuse.Configuration('config', 'config')
 
 configtemplate = {
     'serverId': str,
@@ -22,8 +21,6 @@ configtemplate = {
     'discordChannel': int
 }
 
-validconfig = config.get(configtemplate)
-logging.info(f"Config: {validconfig}")
 server_id = os.environ["serverId"]
 api_key = os.environ["apiKey"]
 discord_key = os.environ["discordKey"]
