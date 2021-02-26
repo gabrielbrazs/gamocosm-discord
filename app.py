@@ -24,10 +24,10 @@ configtemplate = {
 
 validconfig = config.get(configtemplate)
 logging.info(f"Config: {validconfig}")
-server_id = validconfig['serverId']
-api_key = validconfig['apiKey']
-discord_key = validconfig['discordKey']
-discord_channel = validconfig['discordChannel']
+server_id = os.environ["serverId"]
+api_key = os.environ["apiKey"]
+discord_key = os.environ["discordKey"]
+discord_channel = os.environ["discordChannel"]
 
 server = Server(server_id, api_key)
 logging.info(f"Starting status is: {server._status()}")
